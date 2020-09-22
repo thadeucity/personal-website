@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     size="normal"
-                    sitekey="6Lfn2eQUAAAAAF2CzVnfICFVLpALbo0id9vh0Zwq"
+                    sitekey="6LeV2eQUAAAAAFNjWRGdfb_lA9cLQzP4OQnl3w39"
                     onChange={onSubmitWithReCAPTCHA}
                   />
                 </form>
