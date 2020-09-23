@@ -21,6 +21,14 @@ export const Content = styled.div`
 
   width: 100%;
   max-width: 1000px;
+
+  @media (max-width: 640px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 4px;
+  }
 `;
 
 export const AboutCard = styled.div`
@@ -40,6 +48,22 @@ export const AboutCard = styled.div`
     width: 225px;
     height: 225px;
   }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+
+    padding: 32px 16px;
+
+    img {
+      border-radius: ${(props) => props.theme.effects.borderRadius};
+      box-shadow: ${(props) => props.theme.effects.boxShadow};
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    padding: 16px 8px;
+  }
 `;
 
 export const AboutInfo = styled.div`
@@ -52,6 +76,19 @@ export const AboutInfo = styled.div`
   span {
     font-size: 22px;
     font-weight: 500;
+  }
+
+  @media (max-width: 920px) {
+    text-align: left;
+  }
+
+  @media (max-width: 720px) {
+    padding: 16px;
+    font-size: 14px;
+
+    span {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -103,6 +140,40 @@ export const Resume = styled.div`
           margin-left: 8px;
           color: ${(props) => props.theme.colors.text};
         }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+
+    section {
+      h2 {
+        font-size: 20px;
+      }
+
+      ul {
+        li {
+          padding: 0;
+          padding-bottom: 8px;
+          text-align: center;
+        }
+
+        .course,
+        .experience {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    section {
+      h2 {
+        margin-top: 16px;
+        font-size: 22px;
+        text-align: center;
       }
     }
   }

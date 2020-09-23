@@ -29,6 +29,8 @@ export const ContactCard = styled.div`
   display: flex;
   flex-direction: column;
 
+  text-align: center;
+
   padding: 32px;
 
   border-radius: ${(props) => props.theme.effects.borderRadius};
@@ -72,5 +74,23 @@ export const ContactCard = styled.div`
 
   h4 {
     font-size: 20px;
+  }
+
+  @media (max-width: 640px) {
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    button {
+      font-size: 18px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
   }
 `;
