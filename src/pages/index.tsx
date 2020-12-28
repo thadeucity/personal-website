@@ -1,5 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+
+import avatar from '../assets/images/avatar.jpg';
 
 import TopMenu from '../components/TopMenu';
 
@@ -7,6 +10,7 @@ import {
   Container,
   Content,
   AboutCard,
+  AboutImage,
   AboutInfo,
   Resume,
 } from '../styles/pages/Home';
@@ -95,7 +99,15 @@ const Home: React.FC = () => {
           <TopMenu />
           <Content>
             <AboutCard>
-              <img src="/avatar.jpg" alt="Victor Alvarenga" />
+              <AboutImage>
+                <Image
+                  width={256}
+                  height={256}
+                  src={avatar}
+                  quality={90}
+                  alt="about"
+                />
+              </AboutImage>
               <AboutInfo>
                 <span>Hello,</span>
                 <p>

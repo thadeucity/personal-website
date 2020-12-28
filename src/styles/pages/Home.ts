@@ -44,21 +44,10 @@ export const AboutCard = styled.div`
 
   box-shadow: ${(props) => props.theme.effects.boxShadow};
 
-  img {
-    width: 225px;
-    height: 225px;
-  }
-
   @media (max-width: 640px) {
     flex-direction: column;
 
     padding: 32px 16px;
-
-    img {
-      border-radius: ${(props) => props.theme.effects.borderRadius};
-      box-shadow: ${(props) => props.theme.effects.boxShadow};
-      margin-bottom: 16px;
-    }
   }
 
   @media (max-width: 340px) {
@@ -66,8 +55,27 @@ export const AboutCard = styled.div`
   }
 `;
 
+export const AboutImage = styled.div`
+  width: 225px;
+  height: 225px;
+  border-radius: 2px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 640px) {
+    border-radius: ${(props) => props.theme.effects.borderRadius};
+    box-shadow: ${(props) => props.theme.effects.boxShadow};
+    margin-bottom: 16px;
+  }
+`;
+
 export const AboutInfo = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
 
   padding: 32px;
