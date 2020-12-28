@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import Head from 'next/head';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import anyBase from 'any-base';
-
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
 import TopMenu from '../../components/TopMenu';
@@ -23,13 +21,12 @@ const Contact: React.FC = () => {
 
     if (!token) return;
 
-    const converter = anyBase(
-      '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&"()*+-./:<=>?@[]^_`{|}~',
-      'abcdefghijklmnopqrstuvwxyz@.',
-    );
+    const response = await fetch('/api/get-email');
+
+    const { myEmail }: { myEmail: string } = await response.json();
 
     setEmailVisible(true);
-    setEmail(converter('7?8IxS1hCH/!c+g3>2-Y'));
+    setEmail(myEmail);
   };
 
   return (
@@ -77,7 +74,7 @@ const Contact: React.FC = () => {
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     size="normal"
-                    sitekey="6LeV2eQUAAAAAFNjWRGdfb_lA9cLQzP4OQnl3w39"
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
                     onChange={onSubmitWithReCAPTCHA}
                   />
                 </form>
