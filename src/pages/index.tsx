@@ -105,7 +105,7 @@ const Home: React.FC = () => {
                   height={256}
                   src={avatar}
                   quality={90}
-                  alt="about"
+                  alt="Profile Photo"
                 />
               </AboutImage>
               <AboutInfo>
